@@ -29,7 +29,7 @@
     "rimraf": "^5.0.7",
     "rollup": "^4.17.2",
     "rollup-plugin-multi-input": "^1.4.1",
-    "tsx": "3.12",
+    "tsx": "3.14",
     "typedoc": "^0.25.13",
     "typescript": "^4.9.5"
   },
