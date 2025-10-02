@@ -55,7 +55,10 @@ class MaskedRange extends MaskedPattern {
     const toStr = String(this.to).padStart(this.maxLength, '0');
     let sameCharsCount = 0;
     while (sameCharsCount < toStr.length && toStr[sameCharsCount] === fromStr[sameCharsCount]) ++sameCharsCount;
-    patternOpts.mask = toStr.slice(0, sameCharsCount).replace(/0/g, '\\0') + '0'.repeat(this.maxLength - sameCharsCount);
+    patternOpts.mask = toStr.slice(0, sameCharsCount)
+      .replace(/\\/g, '\\\\')
+      .replace(/0/g, '\\0')
+      + '0'.repeat(this.maxLength - sameCharsCount);
 
     super._update(patternOpts);
   }
